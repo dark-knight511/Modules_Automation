@@ -1,8 +1,3 @@
-variable "aws_region" {
-  description = "AWS region to create resources"
-  default     = "us-east-1"
-}
-
 variable "domain_name" {
   description = "Name of the OpenSearch domain"
   default     = "my-opensearch-domain"
