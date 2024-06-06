@@ -1,9 +1,10 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
 resource "aws_secretsmanager_secret" "example_secret" {
   name = var.secret_name
+  tags = var.tags
 }
 
 resource "aws_secretsmanager_secret_version" "example_secret_version" {
