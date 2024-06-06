@@ -16,6 +16,8 @@ variable "tags" {
   default = {
     Environment = "production"
     Team        = "devops"
-    Application = "my-app"
+    owner        = "owner"
+    owneremail   = "owneremail"
+    creationdate = "06-05-2023"
   }
 }
