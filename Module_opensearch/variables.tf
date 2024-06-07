@@ -1,39 +1,45 @@
 variable "domain_name" {
-  description = "Name of the OpenSearch domain"
-  default     = "my-opensearch-domain"
+  description = "The name of the OpenSearch Service domain"
+  type        = string
 }
 
 variable "engine_version" {
-  description = "OpenSearch engine version"
-  default     = "OpenSearch_1.3"
+  description = "The version of Elasticsearch or OpenSearch to use"
+  type        = string
 }
 
 variable "instance_type" {
-  description = "Instance type for OpenSearch data nodes"
-  default     = "r6g.large.search"
+  description = "The instance type for the OpenSearch cluster"
+  type        = string
 }
 
 variable "instance_count" {
-  description = "Number of data nodes in the cluster"
-  default     = 3
+  description = "The number of instances in the OpenSearch cluster"
+  type        = number
 }
 
-variable "ebs_volume_size" {
-  description = "EBS volume size (in GB) for data nodes"
-  default     = 10
+variable "ebs_enabled" {
+  description = "Whether EBS volumes are enabled"
+  type        = bool
 }
 
-variable "search_name_tags" {
-  description = "Tags to apply to the OpenSearch domain"
-  type = map(string)
-  
-  default = {
-    Name  = "open_search"
-    Environment = "production"
-    Team        = "devops"
-    owner        = "owner"
-    owneremail   = "owneremail"
-    creationdate = "06-05-2023"
-  }
-  
+variable "volume_type" {
+  description = "The type of EBS volume"
+  type        = string
+}
+
+variable "volume_size" {
+  description = "The size of the EBS volume in GiB"
+  type        = number
+}
+
+variable "access_policies" {
+  description = "IAM policies specifying who can access the domain"
+  type        = string
+}
+
+variable "region" {
+  description = "The AWS region where the OpenSearch domain will be created"
+  type        = string
+  default     = "us-west-2"
 }
