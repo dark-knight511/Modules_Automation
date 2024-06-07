@@ -1,16 +1,22 @@
 variable "config_recorder_name" {
-  description = "Name of the AWS Config Configuration Recorder"
-  default     = "my-config-recorder"
+  description = "The name of the AWS Config recorder"
+  type        = string
 }
 
-variable "config_role_name" {
-  description = "Name of the IAM role for AWS Config"
-  default     = "config-role"
+variable "role_arn" {
+  description = "The ARN of the IAM role that AWS Config uses to record configurations"
+  type        = string
 }
 
-variable "config_rule_name" {
-  description = "Name of the AWS Config Rule for S3 bucket versioning"
-  default     = "s3-bucket-versioning-enabled"
+variable "s3_bucket_name" {
+  description = "The name of the S3 bucket for AWS Config"
+  type        = string
+}
+
+variable "sns_topic_arn" {
+  description = "The ARN of the SNS topic for AWS Config notifications"
+  type        = string
+  default     = null
 }
 
 variable "name_tags" {
