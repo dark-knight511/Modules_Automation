@@ -8,6 +8,7 @@
 ->Apply terraform fmt to adjust the formatting.
 ->Then apply terraform init for initializing the backend and creating the state file
 ->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors.
+->check through terraform output command to know the outputs acquired after apply.
 ---------------------------------------------------------------------------------------------------------------------------
 2.Opensearch service
 ->Initially creating variables file for the listed paramters below
@@ -21,6 +22,7 @@
 ->Apply terraform fmt to adjust the formatting.
 ->Then apply terraform init for initializing the backend and creating the state file
 ->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors.
+->check through terraform output command to know the outputs acquired after apply.
 -----------------------------------------------------------------------------------------------------------------------------
 3.Secrets manager
 ->Initially creating variables file for the listed paramters below
@@ -31,6 +33,19 @@
 ->Apply terraform fmt to adjust the formatting.
 ->Then apply terraform init for initializing the backend and creating the state file
 ->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors.
+->check through terraform output command to know the outputs acquired after apply.
 -------------------------------------------------------------------------------------------------------------------------------
+4.Config
+->Initially creating variables file for the listed paramters below
+1.recorder_name
+2.role_name(required)
+3.rule_name(required)
+->The role should have permissions to interact with the resources it monitors and the services it uses to deliver configuration data.
+->The name attribute for AWS Config rules is mandatory, must provide a unique name for each rule create.
+->Apply terraform fmt to adjust the formatting.
+->Then apply terraform init for initializing the backend and creating the state file
+->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors.
+->check through terraform output command to know the outputs acquired after apply.
+-----------------------------------------------------------------------------------------------------------------------------------
 
 
