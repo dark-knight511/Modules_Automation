@@ -1,14 +1,19 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
-resource "aws_secretsmanager_secret" "example_secret" {
-  name = var.secret_name
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_secretsmanager_secret" "example" {
+  name       = var.secret_name
+  kms_key_id = var.kms_key_id
   tags = var.tags
 }
 
-resource "aws_secretsmanager_secret_version" "example_secret_version" {
-  secret_id     = aws_secretsmanager_secret.example_secret.id
-  secret_string = var.secret_value
-}
 
+resource "aws_secretsmanager_secret_version" "example" {
+  secret_id     = aws_secretsmanager_secret.example.id
+  secret_string = var.secret_string
+}

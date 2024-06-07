@@ -1,13 +1,18 @@
 variable "secret_name" {
-  description = "Name of the secret to be created in AWS Secrets Manager"
+  description = "The name of the secret"
   type        = string
-  default     = "example-secret"
 }
 
-variable "secret_value" {
-  description = "Value of the secret to be stored in AWS Secrets Manager"
+variable "secret_string" {
+  description = "The actual secret data in string form"
   type        = string
   sensitive   = true
+}
+
+variable "kms_key_id" {
+  description = "The ID or ARN of the KMS key to use for encrypting the secret (optional)"
+  type        = string
+  default     = null
 }
 
 variable "tags" {
