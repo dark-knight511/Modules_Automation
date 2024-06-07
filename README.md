@@ -33,6 +33,7 @@
 1.secret_name
 2.secret_value(required)
 3.name_tags
+4.kms_id(required)
 ->This service aids to maintain secrets and its mandatory to pass value to store our secret.
 ->Apply terraform fmt to adjust the formatting.
 ->Then apply terraform init for initializing the backend and creating the state file
