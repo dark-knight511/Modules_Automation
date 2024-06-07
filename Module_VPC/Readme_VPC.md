@@ -1,4 +1,4 @@
-1.VPC service
+**VPC service**
 ->Initially creating variables file for the listed paramters below
 1.VPC_id
 2.public_subnetid
