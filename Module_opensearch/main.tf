@@ -57,4 +57,5 @@ resource "aws_opensearch_domain" "example" {
   }
 
   access_policies = var.access_policies
+  tags = var.name_tags
 }

@@ -43,3 +43,16 @@ variable "region" {
   type        = string
   default     = "us-west-2"
 }
+variable "name_tags" {
+  description = "Tags to be applied on the naming of the Config"
+  type        = map(string)
+  default = {
+    Name         = "my-config"
+    env          = "dev"
+    team         = "devops"
+    owner        = "owner name"
+    owneremail   = "owner@mail.com"
+    creationdate = "06-06-2024"
+  }
+
+}
