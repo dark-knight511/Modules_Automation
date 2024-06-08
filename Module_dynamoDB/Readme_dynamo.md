@@ -16,3 +16,7 @@
 14.gsi_write_capacity
 15.gsi_projection_type
 16.gsi_non_key_attributes
+->Apply terraform fmt to adjust the formatting. 
+->Then apply terraform init for initializing the backend and creating the state file 
+->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors. 
+>check through terraform output command to know the outputs acquired after apply.
