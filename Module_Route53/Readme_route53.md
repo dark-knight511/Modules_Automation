@@ -9,3 +9,7 @@
 7.record_values(optional)
 8.name_tags(required)
 9.alias(name,zoneid)   
+>Apply terraform fmt to adjust the formatting.
+->Then apply terraform init for initializing the backend and creating the state file
+->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors.
+->check through terraform output command to know the outputs acquired after apply.
