@@ -13,3 +13,4 @@
 ->Then apply terraform init for initializing the backend and creating the state file
 ->Then do terraform apply for applying and recording the changes , where it checks the errors and fixes the errors.
 ->check through terraform output command to know the outputs acquired after apply.
+--------------------------------------------------------------------------------------------------------------------------------
