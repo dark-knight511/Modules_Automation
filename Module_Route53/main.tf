@@ -6,6 +6,8 @@ resource "aws_route53_zone" "example" {
   name              = var.zone_name
   comment           = var.zone_comment
   delegation_set_id = var.zone_delegation_set_id
+  tags = var.name_tags
+
 }
 
 resource "aws_route53_record" "record" {
