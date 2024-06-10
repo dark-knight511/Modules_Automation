@@ -1,9 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
-}
-
-provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 resource "aws_secretsmanager_secret" "example" {
