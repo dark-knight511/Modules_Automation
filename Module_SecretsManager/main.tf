@@ -2,6 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
 resource "aws_secretsmanager_secret" "example" {
   name       = var.secret_name
   kms_key_id = var.kms_key_id
