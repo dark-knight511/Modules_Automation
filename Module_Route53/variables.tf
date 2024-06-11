@@ -15,8 +15,6 @@ variable "zone_delegation_set_id" {
   default     = null
 }
 
-
-
 variable "record_name" {
   description = "The name of the record set"
   type        = string

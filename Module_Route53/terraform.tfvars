@@ -1,8 +1,8 @@
-zone_name                 = "example.com"
+zone_name                 = "google.com"
 zone_comment              = "Example hosted zone"
 
 
-record_name               = "www.example.com"
+record_name               = "www.google.com"
 record_type               = "A"
 record_ttl                = 300
 record_values             = ["192.0.2.44"]
