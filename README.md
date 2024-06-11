@@ -14,4 +14,5 @@
 7.Elastic file system(instance launched)
 8.dynamo db(instance launched)
 9.Config(required custom s3 bucket policies to run it)
+----------------------------------------------------------------------------------------------------------------------------------------------
 
