@@ -6,13 +6,13 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 ->In the above modules 
 1.VPC(instance launched)
-2.Sagemaker(free-tier)(required ECR docker image)
+2.Sagemaker(free-tier)(required ECR docker image)(upto terraform plan done,but plan cannot be applied)
 3.Redshift(paid service)
 4.Route53(instance launched)
 5.Secrets manager(instance launched)
 6.Open search service(paid service)
 7.Elastic file system(instance launched)
 8.dynamo db(instance launched)
-9.Config(required custom s3 bucket policies to run it)
+9.Config(required custom s3 bucket policies to run it)(upto terraform plan done,but plan cannot be applied) 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
