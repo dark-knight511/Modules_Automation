@@ -7,19 +7,7 @@ variable "table_name" {
 variable "billing_mode" {
   description = "The billing mode for the DynamoDB table."
   type        = string
-  default     = "PROVISIONED"
-}
-
-variable "read_capacity" {
-  description = "The read capacity units for the DynamoDB table."
-  type        = number
-  default     = 20
-}
-
-variable "write_capacity" {
-  description = "The write capacity units for the DynamoDB table."
-  type        = number
-  default     = 20
+  default     = "PAY_PER_REQUEST"
 }
 
 variable "hash_key" {
@@ -77,18 +65,6 @@ variable "gsi_range_key" {
   default     = "TopScore"
 }
 
-variable "gsi_read_capacity" {
-  description = "The read capacity units for the global secondary index."
-  type        = number
-  default     = 10
-}
-
-variable "gsi_write_capacity" {
-  description = "The write capacity units for the global secondary index."
-  type        = number
-  default     = 10
-}
-
 variable "gsi_projection_type" {
   description = "The projection type for the global secondary index."
   type        = string
@@ -101,7 +77,6 @@ variable "gsi_non_key_attributes" {
   default     = ["UserId"]
 }
 
-
 variable "name_tags" {
   description = "Tags to be applied on the naming of the Config"
   type        = map(string)
@@ -113,5 +88,4 @@ variable "name_tags" {
     owneremail   = "owner@mail.com"
     creationdate = "06-06-2024"
   }
-
 }

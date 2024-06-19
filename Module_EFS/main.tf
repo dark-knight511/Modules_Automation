@@ -7,10 +7,23 @@ resource "aws_efs_file_system" "example" {
   performance_mode = var.performance_mode
   throughput_mode  = var.throughput_mode
 
-  provisioned_throughput_in_mibps = var.provisioned_throughput_in_mibps
+  # # provisioned_throughput_in_mibps is only needed when throughput_mode is set to provisioned
+  # dynamic "provisioned_throughput_in_mibps" {
+  #   for_each = var.throughput_mode == "provisioned" ? [1] : []
+  #   content {
+  #     provisioned_throughput_in_mibps = var.provisioned_throughput_in_mibps
+  #   }
+  # }
 
-  encrypted  = var.encrypted
-  kms_key_id = var.kms_key_id
+  encrypted = var.encrypted
+
+  # kms_key_id is only needed when encryption is enabled
+  dynamic "kms_key_id" {
+    for_each = var.encrypted && var.kms_key_id != "" ? [1] : []
+    content {
+      kms_key_id = var.kms_key_id
+    }
+  }
 
   tags = var.name_tags
 }

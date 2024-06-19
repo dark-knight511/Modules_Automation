@@ -1,12 +1,14 @@
 variable "secret_name" {
   description = "The name of the secret"
   type        = string
+  default = "Name-of-secret"
 }
 
 variable "secret_string" {
   description = "The actual secret data in string form"
   type        = string
   sensitive   = true
+  default = "secret-1"
 }
 
 variable "kms_key_id" {
@@ -25,4 +27,22 @@ variable "tags" {
     owneremail   = "owneremail"
     creationdate = "06-05-2023"
   }
+}
+
+variable "rotation_enabled" {
+  description = "Enable automatic rotation of the secret"
+  type        = bool
+  default     = true
+}
+
+variable "rotation_days" {
+  description = "Number of days after which the secret will be rotated"
+  type        = number
+  default     = 7
+}
+
+variable "replica_regions" {
+  description = "A list of regions where the secret should be replicated"
+  type        = list(string)
+  default     = []
 }
