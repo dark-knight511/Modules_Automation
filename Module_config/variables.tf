@@ -1,24 +1,50 @@
+variable "aws_region" {
+  description = "The AWS region to deploy resources in"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "sns_topic_name" {
+  description = "The name of the SNS topic for notifications"
+  type        = string
+  default     = "EC2-Instance-Events"
+}
+
+variable "sns_topic_email" {
+  description = "The email address to subscribe to the SNS topic"
+  type        = string
+  default     = "example@example.com"
+}
+
 variable "config_recorder_name" {
   description = "The name of the AWS Config recorder"
   type        = string
+  default     = "my-config-recorder"
 }
 
 variable "role_arn" {
   description = "The ARN of the IAM role that AWS Config uses to record configurations"
   type        = string
+  default     = "arn:aws:iam::123456789012:role/aws-config-role"
+}
+variable "protocol_type" {
+  description = "Type of protocol to be used"
+  type = string
+  default = "email"
+  
 }
 
 variable "s3_bucket_name" {
   description = "The name of the S3 bucket for AWS Config"
   type        = string
+  default     = "my-config-bucket"
 }
-
-variable "sns_topic_arn" {
-  description = "The ARN of the SNS topic for AWS Config notifications"
-  type        = string
-  default     = null
+variable "delivery_channel_name" {
+  description = "Name of the delivery channel"
+  type = string
+  default = "Channel_1"
+  
 }
-
 variable "name_tags" {
   description = "Tags to be applied on the naming of the Config"
   type        = map(string)
@@ -30,5 +56,4 @@ variable "name_tags" {
     owneremail   = "owner@mail.com"
     creationdate = "06-06-2024"
   }
-
 }
