@@ -15,15 +15,9 @@ resource "aws_efs_file_system" "example" {
   #   }
   # }
 
-  encrypted = var.encrypted
+ encrypted = var.encrypted
 
-  # kms_key_id is only needed when encryption is enabled
-  dynamic "kms_key_id" {
-    for_each = var.encrypted && var.kms_key_id != "" ? [1] : []
-    content {
-      kms_key_id = var.kms_key_id
-    }
-  }
+  kms_key_id = var.encrypted && var.kms_key_id != "" ? var.kms_key_id : null
 
   tags = var.name_tags
 }
