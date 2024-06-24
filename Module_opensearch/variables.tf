@@ -41,7 +41,7 @@ variable "access_policies" {
 variable "region" {
   description = "The AWS region where the OpenSearch domain will be created"
   type        = string
-  default     = "us-west-2"
+  default     = "us-east-1"
 }
 variable "name_tags" {
   description = "Tags to be applied on the naming of the Config"
