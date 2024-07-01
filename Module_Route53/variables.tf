@@ -3,6 +3,11 @@ variable "zone_id" {
   description = "The ID of the hosted zone"
 }
 
+variable "zone_name"{
+type         = string
+description  ="zone_name"
+}
+
 variable "record_name" {
   type        = string
   description = "The name of the DNS record"
