@@ -1,17 +1,14 @@
-resource "aws_route53_record" "this" {
-  zone_id = var.zone_id
-  zone_name = var.zone_name
-  name    = var.record_name
-  type    = var.record_type
-  ttl     = var.record_ttl
-  records = var.record_values
+provider "aws" {
+  region = "us-east-1"
+}
 
-  dynamic "alias" {
-    for_each = var.alias_name != "" && var.alias_zone_id != "" ? [1] : []
-    content {
-      name                   = var.alias_name
-      zone_id                = var.alias_zone_id
-      evaluate_target_health = var.alias_evaluate_target_health
-    }
-  }
+module "route53" {
+  source = "git::https://github.com/dark-knight511/Modules_Automation.git//Module_Route53"
+  zone_name                  = var.zone_name
+  record_name                = var.record_name
+  record_type                = var.record_type
+  record_ttl                 = var.record_ttl
+  record_values              = var.record_values
+ 
+
 }

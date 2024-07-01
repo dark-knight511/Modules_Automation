@@ -1,48 +1,36 @@
-variable "zone_id" {
+variable "zone_name" {
+  description = "The domain name for the hosted zone"
   type        = string
-  description = "The ID of the hosted zone"
+  default     = "example.com"
 }
 
-variable "zone_name"{
-type         = string
-description  ="zone_name"
+variable "zone_id" {
+  description = "The hosted zone id "
+  type = string
+  
 }
 
 variable "record_name" {
+  description = "The name of the record set"
   type        = string
-  description = "The name of the DNS record"
+  default     = "www"
 }
 
 variable "record_type" {
+  description = "The DNS record type (e.g., A, AAAA, CNAME)"
   type        = string
-  description = "The type of the DNS record"
   default     = "A"
 }
 
 variable "record_ttl" {
+  description = "The time-to-live for the record"
   type        = number
-  description = "The TTL of the DNS record"
+  default     = 300
 }
 
 variable "record_values" {
+  description = "A list of resource records"
   type        = list(string)
-  description = "The list of values for the DNS record"
+  default     = ["192.0.2.1"]
 }
 
-variable "alias_name" {
-  type        = string
-  description = "The alias DNS name"
-  default     = ""
-}
-
-variable "alias_zone_id" {
-  type        = string
-  description = "The alias zone ID"
-  default     = ""
-}
-
-variable "alias_evaluate_target_health" {
-  type        = bool
-  description = "Whether to evaluate the health of the alias target"
-  default     = false
-}
