@@ -1,16 +1,21 @@
-provider "aws" {
-  region = "us-east-1"
-}
+resource "aws_route53_record" "records" {
+  for_each = var.route53_records
 
-resource "aws_route53_zone" "example" {
-  name              = var.zone_name
-}
+  zone_id = var.zone_id
+  name    = each.value.name
+  type    = each.value.type
+  ttl     = each.value.ttl
+  records = each.value.records
 
-resource "aws_route53_record" "record" {
-  for_each = { for idx, val in var.record_values : idx => val }
-  zone_id  = aws_route53_zone.example.zone_id
-  name     = var.record_name
-  type     = var.record_type
-  ttl      = var.record_ttl
-  records  = [each.value]
+  # Uncomment and adjust these fields if you need alias records
+  # alias {
+  #   name                   = each.value.alias_name
+  #   zone_id                = each.value.alias_zone_id
+  #   evaluate_target_health = each.value.alias_evaluate_target_health
+  # }
+
+  # Uncomment if you need to add tags
+  # tags = {
+  #   Name = each.value.name_tag
+  # }
 }
