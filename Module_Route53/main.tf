@@ -1,8 +1,12 @@
+locals {
+  record_names = [for key, value in var.route53_records : key]
+}
+
 resource "aws_route53_record" "records" {
-  for_each = var.route53_records
+  for_each = { for idx, record_name in local.record_names : record_name => var.route53_records[record_name] }
 
   zone_id = var.zone_id
-  name    = each.value.name
+  name    = each.key
   type    = each.value.type
   ttl     = each.value.ttl
   records = each.value.records
