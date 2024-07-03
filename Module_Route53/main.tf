@@ -1,7 +1,7 @@
 
 locals {
   records = {
-    for key, value in var.route53_records : "${var.zone_id}.${value.name}" => {
+    for key, value in var.route53_records : "${value.name}" => {
       name    = value.name
       type    = value.type
       ttl     = value.ttl
