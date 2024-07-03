@@ -5,12 +5,12 @@ variable "zone_id" {
 
 variable "route53_records" {
   type = map(object({
-    Name                              = string
-    Type                              = string
-    TTL                               = number
-    ResourceRecords                   = list(string)
-    Alias_name                        = optional(string)
-    Alias_zone_id                     = optional(string)
-    Alias_evaluate_target_health      = optional(bool)
+    name                      = string
+    type                      = string
+    ttl                       = number
+    records                   = list(string)
+    alias_name                = optional(string)
+    alias_zone_id             = optional(string)
+    alias_evaluate_target_health = optional(bool)
   }))
 }
