@@ -1,3 +1,8 @@
+variable "zone_id" {
+  description = "The Route 53 hosted zone ID"
+  type        = string
+}
+
 variable "route53_records" {
   description = "List of Route 53 records"
   type = list(object({
@@ -11,5 +16,4 @@ variable "route53_records" {
       evaluate_target_health = bool
     }))
   }))
-  
 }
